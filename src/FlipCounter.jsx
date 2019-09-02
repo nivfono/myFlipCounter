@@ -77,12 +77,12 @@ return(
   <h1>
    <table>
 <tr>
-<td style={{ letterSpacing:3  ,color: "white",background:"black"}}>{this.state.count5}</td>
-<td style={{ letterSpacing:3  ,color: "white", background:"black"}}>{this.state.count4}</td>
-<td style={{ letterSpacing:3  ,color: "white", background:"black"}}>{this.state.count3}</td>
-<td style={{ letterSpacing:3  ,color: "white", background:"black"}}>{this.state.count2}</td>
-<td style={{ letterSpacing:3  ,color: "white", background:"black"}}>{this.state.count1}</td>
-<td style={{ letterSpacing:3  ,color: "white",background:"black"}}>{this.state.count0}</td>
+<td >{this.state.count5}</td>
+<td >{this.state.count4}</td>
+<td >{this.state.count3}</td>
+<td >{this.state.count2}</td>
+<td >{this.state.count1}</td>
+<td>{this.state.count0}</td>
 </tr>
 
    </table>
