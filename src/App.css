@@ -3,31 +3,3 @@ body{
 padding-left:2em;
 width:90%;
 }
-#links{
-   width:100%;
-   clear:both;
-}
-
-#links a{
-  float:left;
-  width:10em;
-  text-align:center;
-  text-decoration:none;
-  color:black;
-  padding:1em;
-  border:1px solid black; 
-}
-
-#links a:hover{background-color:rgb(65, 161, 89);}
-
-td:hover{background-color:rgb(248, 27, 27);}
-
-p{
-  color:rgb(189, 27, 27);
-  font-size:1.5em;
-}
-td {
-  letter-Spacing:3;
-  color: "white";
-  background:"black"
-}
