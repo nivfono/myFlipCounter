@@ -68,12 +68,12 @@ class Counter extends Component {
         <h1>
           <table>
             <tr>
-              <td>{this.state.count5}</td>
-              <td>{this.state.count4}</td>
-              <td>{this.state.count3}</td>
-              <td>{this.state.count2}</td>
-              <td>{this.state.count1}</td>
-              <td>{this.state.count0}</td>
+              <td id="main">{this.state.count5}</td>
+              <td id="main">{this.state.count4}</td>
+              <td id="main">{this.state.count3}</td>
+              <td id="main">{this.state.count2}</td>
+              <td id="main">{this.state.count1}</td>
+              <td id="main">{this.state.count0}</td>
             </tr>
           </table>
         </h1>
