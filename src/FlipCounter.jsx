@@ -12,11 +12,11 @@ class Counter extends Component {
     this.setState({ x: parseInt(this.state.x) + 1 });
   };
 
-  myChangeHandler = event => {
+  handleChange = event => {
     this.setState({ value: event.target.value });
   };
 
-  mySubmitHandler = event => {
+  handleSubmit = event => {
     this.setState({ x: this.state.value });
 
     event.preventDefault();
@@ -51,11 +51,11 @@ class Counter extends Component {
         </h1>
         <button onClick={this.add}>add</button>
 
-        <form onSubmit={this.mySubmitHandler}>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             value={this.state.value}
-            onChange={this.myChangeHandler}
+            onChange={this.handleChange}
           />
           <input type="submit" value="Submit" />
         </form>
