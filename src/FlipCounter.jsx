@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./FlipCounter.css";
-import { arrayExpression } from "@babel/types";
+
 class Counter extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +23,6 @@ class Counter extends Component {
   };
 
   mySubmitHandler = (event) => {
-    
     this.setState({ x: this.state.value });
     console.log("submit activated");
     event.preventDefault();
