@@ -14,8 +14,6 @@ class NewFlipCounter extends Component {
           count6: 0
         };
     
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
       }
       add = () => {
         if (this.state.count0 == 9) {
@@ -48,11 +46,11 @@ class NewFlipCounter extends Component {
         });
       };
     
-      handleChange(event) {
+      handleChange=(event) =>{
         this.setState({ value: event.target.value });
       }
     
-      handleSubmit(event) {
+      handleSubmit=(event)=> {
         this.setState({ count0: parseInt(this.state.value % 10) });
         this.setState({ count1: parseInt((this.state.value / 10) % 10) });
         this.setState({ count2: parseInt((this.state.value / 100) % 10) });
