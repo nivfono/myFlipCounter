@@ -5,15 +5,18 @@ class Counter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      x: 0
+     x:"000000"
     };
   }
-  add = num => {
-    this.setState({ x: parseInt(this.state.x) + 1 });
+  add = () => {
+    
+    this.setState({ x:"00000"+ parseInt(parseInt(this.state.x) + 1) });
+ console.log(this.state.x)
   };
 
   handleChange = event => {
     this.setState({ value: event.target.value });
+    console.log(event.target.value)
   };
 
   handleSubmit = event => {
@@ -23,28 +26,31 @@ class Counter extends Component {
   };
 
   render() {
-    const arr = [
-      parseInt((this.state.x / 100000) % 10),
-      parseInt((this.state.x / 10000) % 10),
-      parseInt((this.state.x / 1000) % 10),
-      parseInt((this.state.x / 100) % 10),
-      parseInt(this.state.x / 10) % 10,
-      parseInt(this.state.x % 10)
-    ];
+    let mystring =this.state.x;
+   let array=["0","0","0","0","0","0"]
+   
 
-    return (
+    for(var i=0;i<6;i++){   
+      if(mystring[i]!=null)
+      array[mystring.length-i-1]=mystring[i];
+ 
+    } 
+array.reverse();
+
+ 
+return (
       <div>
-        <p>this is my counter: </p>
+        <p>mystring</p>
         <h1>
           <table>
             <tbody>
               <tr>
-                <td id="main">{arr[0]}</td>
-                <td id="main">{arr[1]}</td>
-                <td id="main">{arr[2]}</td>
-                <td id="main">{arr[3]}</td>
-                <td id="main">{arr[4]}</td>
-                <td id="main">{arr[5]}</td>
+                <td id="main">{array[0]}</td>
+                <td id="main">{array[1]}</td>
+                <td id="main">{array[2]}</td>
+                <td id="main">{array[3]}</td>
+                <td id="main">{array[4]}</td>
+                <td id="main">{array[5]}</td>
               </tr>
             </tbody>
           </table>
