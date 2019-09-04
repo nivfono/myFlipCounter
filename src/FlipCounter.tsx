@@ -11,12 +11,12 @@ class Counter extends Component {
   add = () => {
     
     this.setState({ x:"00000"+ parseInt(parseInt(this.state.x) + 1) });
- console.log(this.state.x)
+   
   };
 
   handleChange = event => {
     this.setState({ value: event.target.value });
-    console.log(event.target.value)
+    
   };
 
   handleSubmit = event => {
