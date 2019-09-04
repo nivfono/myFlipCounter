@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import "./FlipCounter.css";
 
+
+
 class Counter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     x:"000000"
+      x: 0
     };
   }
   add = () => {
-    
-    this.setState({ x:"00000"+ parseInt(parseInt(this.state.x) + 1) });
-   
+    this.setState({ x: parseInt(this.state.x) + 1 });
+    console.log(this.state.x);
   };
 
   handleChange = event => {
     this.setState({ value: event.target.value });
-    
   };
 
   handleSubmit = event => {
@@ -26,19 +26,14 @@ class Counter extends Component {
   };
 
   render() {
-    let mystring =this.state.x;
-   let array=["0","0","0","0","0","0"]
-   
+    let mystring = String(this.state.x);
+    let array = ["0", "0", "0", "0", "0", "0"];
+    for (var i = 0; i < 6; i++) {
+      if (mystring[i] != null) array[mystring.length - i - 1] = mystring[i];
+    }
+    array.reverse();
 
-    for(var i=0;i<6;i++){   
-      if(mystring[i]!=null)
-      array[mystring.length-i-1]=mystring[i];
- 
-    } 
-array.reverse();
-
- 
-return (
+    return (
       <div>
         <p>mystring</p>
         <h1>
