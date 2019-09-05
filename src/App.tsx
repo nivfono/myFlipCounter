@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Counter from "/home/trucknet/myreact/src/FlipCounter";
+import Counter from "/home/niv/myflipcounter/myflipcounter/src/FlipCounter.tsx";
 
 import "./App.css";
 class App extends Component {
@@ -7,8 +7,6 @@ class App extends Component {
     return (
       <div id="body">
         <Counter />
-       
-  
       </div>
     );
   }

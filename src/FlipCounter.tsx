@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./FlipCounter.css";
 
-
-
 class Counter extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +10,6 @@ class Counter extends Component {
   }
   add = () => {
     this.setState({ x: parseInt(this.state.x) + 1 });
-    console.log(this.state.x);
   };
 
   handleChange = event => {
@@ -27,11 +24,13 @@ class Counter extends Component {
 
   render() {
     let mystring = String(this.state.x);
-    let array = ["0", "0", "0", "0", "0", "0"];
-    for (var i = 0; i < 6; i++) {
-      if (mystring[i] != null) array[mystring.length - i - 1] = mystring[i];
+
+    var arr = mystring.split("");
+    arr.reverse();
+
+    if (arr.length < 6) {
+      for (var i = 0; i < 6 - (arr.length - 4); i++) arr.push("0");
     }
-    array.reverse();
 
     return (
       <div>
@@ -40,12 +39,12 @@ class Counter extends Component {
           <table>
             <tbody>
               <tr>
-                <td id="main">{array[0]}</td>
-                <td id="main">{array[1]}</td>
-                <td id="main">{array[2]}</td>
-                <td id="main">{array[3]}</td>
-                <td id="main">{array[4]}</td>
-                <td id="main">{array[5]}</td>
+                <td id="main">{arr[5]}</td>
+                <td id="main">{arr[4]}</td>
+                <td id="main">{arr[3]}</td>
+                <td id="main">{arr[2]}</td>
+                <td id="main">{arr[1]}</td>
+                <td id="main">{arr[0]}</td>
               </tr>
             </tbody>
           </table>
