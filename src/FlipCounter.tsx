@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./FlipCounter.css";
+import FlipCountercontainer from "./FlipCounterCONAINER";
 
 interface Props {}
 
@@ -32,7 +33,6 @@ class FlipCounter extends Component<Props, State> {
 
   render() {
     let mystring = String(this.state.x);
-
     var arr = mystring.split("");
     arr.reverse();
 
@@ -58,15 +58,11 @@ class FlipCounter extends Component<Props, State> {
           </table>
         </h1>
         <button onClick={this.add}>add</button>
-
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-          <input type="submit" value="Submit" />
-        </form>
+        <FlipCountercontainer
+          onSubmit={value => {
+            this.setState({ x: value || 0 });
+          }}
+        />
       </div>
     );
   }
