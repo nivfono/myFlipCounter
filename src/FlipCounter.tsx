@@ -34,12 +34,13 @@ class FlipCounter extends Component<Props, State> {
 
   render() {
     let mystring = String(this.state.x);
-    var arr = mystring.split("");
 
-    if (arr.length < 6) {
-      for (var i = 0; i < 5; i++) arr.push("0");
-    }
-    const numbers = arr.map(nums => {
+    var arr1 = ["0", "0", "0", "0", "0", "0"];
+    var arr2 = mystring.split("");
+    arr2.reverse();
+    for (var i = 0; i < arr2.length; i++) arr1[i] = arr2[i];
+    arr1.reverse();
+    const numbers = arr1.map(nums => {
       return <td id="main">{nums}</td>;
     });
     return (
