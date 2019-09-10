@@ -1,0 +1,3 @@
+diff a/src/FlipCounter.tsx b/src/FlipCounter.tsx	(rejected hunks)
+@@ -38 +37,0 @@ class FlipCounter extends Component<Props, State> {
+- 

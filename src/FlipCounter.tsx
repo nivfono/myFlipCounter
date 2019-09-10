@@ -45,6 +45,7 @@ class FlipCounter extends Component<Props, State> {
     return (
       <div>
         <p>mystring</p>
+
         <h1>
           <table>
             <tbody>
@@ -55,7 +56,9 @@ class FlipCounter extends Component<Props, State> {
         <button onClick={this.add}>add</button>
         <Container
           onSubmit={value => {
-            this.setState({ x: value || 0 });
+            this.setState({
+              x: value || 0
+            });
           }}
         />
       </div>
