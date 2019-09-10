@@ -38,7 +38,6 @@ class FlipCounter extends Component<Props, State> {
 
     if (arr.length < 6) {
       for (var i = 0; i < 5; i++) arr.push("0");
-    console.log(arr.length)
     }
 
     return (

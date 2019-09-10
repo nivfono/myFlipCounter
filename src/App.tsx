@@ -4,11 +4,10 @@ import FlipCounter from "./FlipCounter";
 import "./App.css";
 class App extends Component {
   render() {
-
     return (
       <div id="body">
         <FlipCounter />
-</div>
+      </div>
     );
   }
 }
