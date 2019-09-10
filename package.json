@@ -3,22 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
-   
   },
   "devDependencies": {
-    "prettier": "prettier --write \"src/**/*.ts*\"",
-    "jest": "^24.9.0",
-    "react-scripts": "3.1.1",
-    "typescript": "^3.6.2",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.4",
     "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0"
+    "@types/react-dom": "^16.9.0",
+    "husky": "^3.0.5",
+    "prettier": "1.18.2",
+    "react-scripts": "3.1.1",
+    "typescript": "^3.6.2"
   },
   "scripts": {
+    "prettier": "prettier --write \"src/**/*.ts*\"",
     "start": "PORT=9000  react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -26,6 +25,11 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "browserslist": {
     "production": [

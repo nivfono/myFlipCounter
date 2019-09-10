@@ -10,7 +10,7 @@ type State = {
   value: string | undefined;
 };
 
-class flipCountercontainer extends Component<Props, State> {
+class Container extends Component<Props, State> {
   state = { value: "" };
 
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,4 +38,4 @@ class flipCountercontainer extends Component<Props, State> {
   }
 }
 
-export default flipCountercontainer;
+export default Container;

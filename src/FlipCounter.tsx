@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./FlipCounter.css";
-import FlipCountercontainer from "./FlipCounterCONAINER";
+import Container from "./Container";
 
 interface Props {}
 
@@ -17,6 +17,7 @@ class FlipCounter extends Component<Props, State> {
       value: ""
     };
   }
+
   add = () => {
     this.setState({ x: this.state.x + 1 });
   };
@@ -34,31 +35,25 @@ class FlipCounter extends Component<Props, State> {
   render() {
     let mystring = String(this.state.x);
     var arr = mystring.split("");
-    arr.reverse();
 
     if (arr.length < 6) {
       for (var i = 0; i < 5; i++) arr.push("0");
     }
-
+    const numbers = arr.map(nums => {
+      return <td id="main">{nums}</td>;
+    });
     return (
       <div>
         <p>mystring</p>
         <h1>
           <table>
             <tbody>
-              <tr>
-                <td id="main">{arr[5]}</td>
-                <td id="main">{arr[4]}</td>
-                <td id="main">{arr[3]}</td>
-                <td id="main">{arr[2]}</td>
-                <td id="main">{arr[1]}</td>
-                <td id="main">{arr[0]}</td>
-              </tr>
+              <tr>{numbers}</tr>
             </tbody>
           </table>
         </h1>
         <button onClick={this.add}>add</button>
-        <FlipCountercontainer
+        <Container
           onSubmit={value => {
             this.setState({ x: value || 0 });
           }}
