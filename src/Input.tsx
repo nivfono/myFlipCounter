@@ -12,7 +12,7 @@ type State = {
 };
 
 class Container extends Component<Props, State> {
-  state = { value: "", newnum: -5 };
+  state = { value: "", newnum: 0 };
 
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ value: event.target.value });

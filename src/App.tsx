@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div id="body">
-        <Container num={125.3} />
+        <Container num={158.7} />
       </div>
     );
   }

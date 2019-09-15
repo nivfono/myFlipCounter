@@ -17,7 +17,7 @@ class Container extends Component<Props, State> {
 
     return (
       <div>
-        <FlipCounter num={mynum} />
+        <FlipCounter value={mynum} />
         <Input
           num={this.state.newnum}
           onSubmit={num => {
