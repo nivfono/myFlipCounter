@@ -1,41 +1,33 @@
 import React, { Component } from "react";
+import Input from "./Input";
 import FlipCounter from "./FlipCounter";
-import "./App.css";
 
-type Props = {
-  onSubmit: (value: number | undefined) => void;
-};
-
-type State = {
-  value: string | undefined;
-};
+interface Props {
+  num: number;
+}
+interface State {
+  newnum: number;
+}
 
 class Container extends Component<Props, State> {
-  state = { value: "" };
-
-  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ value: event.target.value });
-  };
-
-  handleSubmit = (event: React.FormEvent) => {
-    const intValue = this.state.value ? parseInt(this.state.value) : undefined;
-    this.props.onSubmit(intValue);
-    event.preventDefault();
-  };
+  state = { newnum: this.props.num };
 
   render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
+    const mynum = Math.round(this.state.newnum);
 
-        <input type="submit" value="Submit" />
-      </form>
+    return (
+      <div>
+        <FlipCounter num={mynum} />
+        <Input
+          num={this.state.newnum}
+          onSubmit={num => {
+            this.setState({
+              newnum: num || 0
+            });
+          }}
+        />
+      </div>
     );
   }
 }
-
 export default Container;

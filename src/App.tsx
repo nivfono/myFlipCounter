@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import FlipCounter from "./FlipCounter";
 
 import "./App.css";
+import Container from "./Container";
 class App extends Component {
   render() {
     return (
       <div id="body">
-        <FlipCounter />
+        <Container num={125.3} />
       </div>
     );
   }

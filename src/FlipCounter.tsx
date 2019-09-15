@@ -1,40 +1,16 @@
 import React, { Component } from "react";
 import "./FlipCounter.css";
-import Container from "./Container";
 
-interface Props {}
-
-interface State {
-  x: number;
-  value: string;
+interface Props {
+  num: number;
 }
 
-class FlipCounter extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      x: 0,
-      value: ""
-    };
-  }
-
-  add = () => {
-    this.setState({ x: this.state.x + 1 });
-  };
-
-  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ value: event.target.value });
-  };
-
-  handleSubmit = (event: React.FormEvent) => {
-    this.setState({ x: parseInt(this.state.value) });
-
-    event.preventDefault();
-  };
-
+class FlipCounter extends Component<Props> {
   render() {
-    let mystring = String(this.state.x);
-
+    const { num } = this.props;
+    let mynum = Math.round(num);
+    if (this.props.num > -5) mynum = this.props.num;
+    let mystring = String(mynum);
     var arr1 = ["0", "0", "0", "0", "0", "0"];
     var arr2 = mystring.split("");
     arr2.reverse();
@@ -45,8 +21,6 @@ class FlipCounter extends Component<Props, State> {
     });
     return (
       <div>
-        <p>mystring</p>
-
         <h1>
           <table>
             <tbody>
@@ -54,14 +28,6 @@ class FlipCounter extends Component<Props, State> {
             </tbody>
           </table>
         </h1>
-        <button onClick={this.add}>add</button>
-        <Container
-          onSubmit={value => {
-            this.setState({
-              x: value || 0
-            });
-          }}
-        />
       </div>
     );
   }
