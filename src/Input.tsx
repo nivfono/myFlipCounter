@@ -3,7 +3,6 @@ import "./App.css";
 
 type Props = {
   onSubmit: (num: number | undefined) => void;
-  num: number;
 };
 
 type State = {
