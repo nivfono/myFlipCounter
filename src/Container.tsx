@@ -2,22 +2,17 @@ import React, { Component } from "react";
 import Input from "./Input";
 import FlipCounter from "./FlipCounter";
 
-interface Props {
-  num: number;
-}
 interface State {
   newnum: number;
 }
 
-class Container extends Component<Props, State> {
-  state = { newnum: this.props.num };
+class Container extends Component<{}, State> {
+  state = { newnum: 0 };
 
   render() {
-    const mynum = Math.round(this.state.newnum);
-
     return (
       <div>
-        <FlipCounter value={mynum} />
+        <FlipCounter value={this.state.newnum} />
         <Input
           onSubmit={num => {
             this.setState({
